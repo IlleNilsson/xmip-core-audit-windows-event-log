@@ -13,7 +13,10 @@ publish = false
 [lib]
 path = "src/lib.rs"
 
-[dependencies]
+# Every dependency is Windows's alone: on any other platform the crate is
+# empty, and cargo refuses a dependency a build does not use
+# (unused_dependencies, Cargo 1.100).
+[target.'cfg(windows)'.dependencies]
 # A Technology depends on its parent Capability, never the reverse
 # (repository-model.md): the operating system's log is audit's seam, and
 # the entry's text audit's.
@@ -24,10 +27,8 @@ abi = { package = "xmip-core-abi", git = "https://github.com/IlleNilsson/xmip-co
 codec = { package = "xmip-core-library-codec", git = "https://github.com/IlleNilsson/xmip-core-library-codec", branch = "main" }
 # The severity an entry is written at.
 xcore = { package = "xmip-core", git = "https://github.com/IlleNilsson/xmip-core", branch = "main" }
-
 # The Event Log and the registry are C interfaces, reached from one file,
 # src/system.rs (ADR-0050, amendment 2026-09-25).
-[target.'cfg(windows)'.dependencies]
 windows-sys = { version = "0.61", features = [
     "Win32_Foundation",
     "Win32_Security",
