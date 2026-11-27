@@ -1,11 +1,11 @@
 [package]
 name = "xmip-core-audit-windows-event-log"
-version = "0.1.0"
-edition = "2024"
-license = "AGPL-3.0-or-later"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
 repository = "https://github.com/IlleNilsson/xmip-core-audit-windows-event-log"
 description = "The Windows Event Log, Application, source Xmip: ADR-0062's operating system's log on Windows, which the program that runs hands its audit when audit cannot persist. A xmip-core-audit technology."
-publish = false
+publish.workspace = true
 
 [lib]
 path = "src/lib.rs"
