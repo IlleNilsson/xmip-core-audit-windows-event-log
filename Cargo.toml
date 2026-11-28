@@ -17,13 +17,13 @@ path = "src/lib.rs"
 # A Technology depends on its parent Capability, never the reverse
 # (repository-model.md): the operating system's log is audit's seam, and
 # the entry's text audit's.
-audit = { package = "xmip-core-audit", git = "https://github.com/IlleNilsson/xmip-core-audit", branch = "main" }
+audit = { workspace = true }
 # The event source's name, XMIP_EVENT_SOURCE, from the header that declares it.
-abi = { package = "xmip-core-abi", git = "https://github.com/IlleNilsson/xmip-core-abi", branch = "main" }
+abi = { workspace = true }
 # An entry's text crosses to Windows as codec's wide string.
-codec = { package = "xmip-core-library-codec", git = "https://github.com/IlleNilsson/xmip-core-library-codec", branch = "main" }
+codec = { workspace = true }
 # The severity an entry is written at.
-xcore = { package = "xmip-core", git = "https://github.com/IlleNilsson/xmip-core", branch = "main" }
+xcore = { workspace = true }
 # The Event Log and the registry are C interfaces, reached from one file,
 # src/system.rs (ADR-0050, amendment 2026-09-25).
 windows-sys = { version = "0.61", features = [
